@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginVC" customModule="EmergencyApp" customModuleProvider="target">
+            <connections>
+                <outlet property="emailTF" destination="QXR-F3-pGV" id="6Vk-gI-TcX"/>
+                <outlet property="passTF" destination="Qgb-SF-enb" id="oDS-Wz-3AD"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qgb-SF-enb" customClass="TJTextField" customModule="EmergencyApp" customModuleProvider="target">
+                    <rect key="frame" x="37" y="300" width="340" height="36"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="imageWidth">
+                            <integer key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="image" keyPath="txtImage" value="Password"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="leftTextPedding">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                    </variation>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGk-Ee-ibq" customClass="RoundButton" customModule="EmergencyApp" customModuleProvider="target">
+                    <rect key="frame" x="82" y="320" width="250" height="65"/>
+                    <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="aGk-Ee-ibq" secondAttribute="height" multiplier="77:20" id="hcf-xQ-ZEX">
+                            <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                        </constraint>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <state key="normal" title="LOGIN">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                    </variation>
+                    <connections>
+                        <action selector="Login_btn:" destination="-1" eventType="touchUpInside" id="pMI-c8-Ckb"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7Y-PA-MWi">
+                    <rect key="frame" x="0.0" y="70" width="414" height="47"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Emergency App">
+                            <attributes>
+                                <font key="NSFont" size="42" name="Arial-BoldMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <attributedString key="attributedText">
+                            <fragment content="Emergency App">
+                                <attributes>
+                                    <font key="NSFont" size="75" name="Arial-BoldMT"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </variation>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kI3-FT-PgL">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QXR-F3-pGV">
+                    <rect key="frame" x="37" y="217" width="340" height="43"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="imageWidth">
+                            <integer key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="leftTextPedding">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                    </variation>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ic9-5D-SOp">
+                    <rect key="frame" x="0.0" y="117" width="414" height="100"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbz-fb-iaO">
+                    <rect key="frame" x="0.0" y="260" width="414" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adj-zN-faG">
+                    <rect key="frame" x="108" y="405" width="198" height="30"/>
+                    <state key="normal" title="DON'T HAVE AN ACCOUNT?"/>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    </variation>
+                    <connections>
+                        <action selector="openSignUpVC:" destination="-1" eventType="touchUpInside" id="vgg-qK-uXP"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.94557088613510132" green="0.95678645372390747" blue="0.96118956804275513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="QXR-F3-pGV" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="2Dp-je-oOP"/>
+                <constraint firstItem="Adj-zN-faG" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="4al-CV-5eH"/>
+                <constraint firstItem="Qgb-SF-enb" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="9A7-YM-9Jh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tbz-fb-iaO" secondAttribute="trailing" id="AP5-s7-l1m"/>
+                <constraint firstItem="Qgb-SF-enb" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="50:1024" id="CmT-Jq-jLm"/>
+                <constraint firstItem="QXR-F3-pGV" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="60:1024" id="EoX-I3-kiL"/>
+                <constraint firstItem="ic9-5D-SOp" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="100:736" id="Eud-8d-fg6"/>
+                <constraint firstItem="ic9-5D-SOp" firstAttribute="top" secondItem="H7Y-PA-MWi" secondAttribute="bottom" id="GNT-nj-rG6"/>
+                <constraint firstItem="aGk-Ee-ibq" firstAttribute="top" secondItem="tbz-fb-iaO" secondAttribute="bottom" id="HAk-Hb-ymu"/>
+                <constraint firstItem="tbz-fb-iaO" firstAttribute="top" secondItem="QXR-F3-pGV" secondAttribute="bottom" id="Ik3-g0-uvh"/>
+                <constraint firstItem="aGk-Ee-ibq" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="65:736" id="OuJ-Ue-aST"/>
+                <constraint firstItem="H7Y-PA-MWi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Rbm-tH-a4I"/>
+                <constraint firstItem="H7Y-PA-MWi" firstAttribute="top" secondItem="kI3-FT-PgL" secondAttribute="bottom" id="T8n-hY-OCE"/>
+                <constraint firstItem="QXR-F3-pGV" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="340:414" id="Tde-U7-6VH"/>
+                <constraint firstItem="Adj-zN-faG" firstAttribute="top" secondItem="aGk-Ee-ibq" secondAttribute="bottom" constant="20" id="XAS-7S-zC4">
+                    <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                </constraint>
+                <constraint firstItem="tbz-fb-iaO" firstAttribute="top" secondItem="Qgb-SF-enb" secondAttribute="bottom" id="bXh-y6-oP7"/>
+                <constraint firstItem="Qgb-SF-enb" firstAttribute="width" secondItem="QXR-F3-pGV" secondAttribute="width" id="cpp-9M-MZk"/>
+                <constraint firstItem="aGk-Ee-ibq" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="d4g-4q-8Zl"/>
+                <constraint firstItem="H7Y-PA-MWi" firstAttribute="top" secondItem="kI3-FT-PgL" secondAttribute="bottom" id="dCJ-lo-mUf"/>
+                <constraint firstItem="ic9-5D-SOp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gRo-vp-fmu"/>
+                <constraint firstItem="QXR-F3-pGV" firstAttribute="top" secondItem="ic9-5D-SOp" secondAttribute="bottom" id="kSS-R6-swX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="H7Y-PA-MWi" secondAttribute="trailing" id="npk-a7-WHs"/>
+                <constraint firstItem="tbz-fb-iaO" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="60:736" id="peO-F0-Q5R">
+                    <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                </constraint>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ic9-5D-SOp" secondAttribute="trailing" id="puD-hU-Yf7"/>
+                <constraint firstItem="kI3-FT-PgL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qpZ-Wc-xhP"/>
+                <constraint firstItem="kI3-FT-PgL" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="qxl-zL-Ve7"/>
+                <constraint firstItem="kI3-FT-PgL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="rH4-4Q-ZJy"/>
+                <constraint firstItem="Qgb-SF-enb" firstAttribute="top" secondItem="QXR-F3-pGV" secondAttribute="bottom" constant="40" id="rl6-Cx-tfm">
+                    <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                </constraint>
+                <constraint firstItem="H7Y-PA-MWi" firstAttribute="top" secondItem="kI3-FT-PgL" secondAttribute="bottom" id="sLt-yy-OUI"/>
+                <constraint firstItem="kI3-FT-PgL" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="smf-s6-bzS"/>
+                <constraint firstItem="kI3-FT-PgL" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="70:736" id="wBG-7q-K7b"/>
+                <constraint firstItem="H7Y-PA-MWi" firstAttribute="top" secondItem="kI3-FT-PgL" secondAttribute="bottom" id="weg-Ld-NsK"/>
+                <constraint firstItem="tbz-fb-iaO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="z4q-wd-Rp3"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="Qgb-SF-enb"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="131.8840579710145" y="150.81521739130437"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Password" width="16" height="22"/>
+    </resources>
+</document>

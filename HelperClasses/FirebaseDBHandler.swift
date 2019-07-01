@@ -29,7 +29,7 @@ class DatabaseHandler{
     
     
     func createDBUser(uid:String , UserData:[String:Any]){
-       ref.child("Users").child(uid).updateChildValues(UserData)
+       ref.child("Admin").child(uid).updateChildValues(UserData)
     }
     
         

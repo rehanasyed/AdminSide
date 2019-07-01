@@ -51,7 +51,7 @@ class SignUpVC: AppBaseVC {
         
         genderPickerView.selectRow(0, inComponent: 0, animated: false)
         
-        tfArr = [tfUsername,tfPhoneNumber,tfPassword,tfConfirmPassword,tfGender]
+        tfArr = [tfUsername,tfPhoneNumber,tfGender]
         
         }
 

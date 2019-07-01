@@ -77,10 +77,13 @@ class VerificationVC: AppBaseVC {
             if result{
                 if self!.shouldCreateUser{
                     DatabaseHandler.sharedInstance.createDBUser(uid: Auth.auth().currentUser!.uid, UserData: AppHelper.sharedInstance.userDetailsDic)
-                    DatabaseHandler.sharedInstance.ref.child("PhoneNumbers").setValue([AppHelper.sharedInstance.userDetailsDic["PhoneNumber"]:""])
+                    DatabaseHandler.sharedInstance.ref.child("PhoneNumbers").child(AppHelper.sharedInstance.userDetailsDic["PhoneNumber"]!).setValue("")
+                    
+                    //.updateChildValues([AppHelper.sharedInstance.userDetailsDic["PhoneNumber"]:""])
                 }
-                let vc = MapVC()
-                self!.navigationController?.pushViewController(vc, animated: true)
+               // let vc = HomeVC()
+               // self!.navigationController?.pushViewController(vc, animated: true)
+               
             }
             
             else{

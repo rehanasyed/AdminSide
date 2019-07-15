@@ -25,7 +25,7 @@ var ref:DatabaseReference!
         super.viewDidLoad()
         ref=Database.database().reference()
 
-        cpv=CountryPickerView(frame:CGRect(x: 0, y: 0, width: custom_height * 2.75, height: custom_height))
+        cpv=CountryPickerView(frame:CGRect(x: 0, y: 0, width: custom_height * 3, height: custom_height))
         emailTF.leftView = cpv
         emailTF.leftViewMode = .always
         

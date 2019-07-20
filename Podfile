@@ -15,7 +15,9 @@ pod 'CountryPickerView'
   pod 'Firebase/Firestore'
 pod 'GooglePlaces'
   pod 'GoogleMaps'
-pod 'MBProgressHUD', '~> 1.1.0'	
+pod 'MBProgressHUD', '~> 1.1.0'
+
+pod 'MessageKit','~> 2.0.0'
 
 
   target 'AdminSideTests' do

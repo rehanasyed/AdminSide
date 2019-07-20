@@ -33,11 +33,11 @@ class AuthenticationHandler{
             verificationCode: verificationCode)
         Auth.auth().signInAndRetrieveData(with: credential, completion: { (Data, error) in
             if error == nil{
-                
+                completionHandler!(true)
             }
         })
         
-        completionHandler!(true)
+        
         
     }
     

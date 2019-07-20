@@ -10,24 +10,24 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Emergency Chat-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AdminSide" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ChatViewController" customModule="AdminSide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="iOb-kH-QJX"/>
+                    <tabBarItem key="tabBarItem" title="Emergency Chat" id="iOb-kH-QJX"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1459" y="-204"/>
         </scene>
-        <!--View Controller-->
+        <!--Lost Item Reports-->
         <scene sceneID="ZsA-ch-ceo">
             <objects>
                 <viewController id="cxe-SR-spO" sceneMemberID="viewController">
@@ -37,7 +37,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6oH-2T-Qt4"/>
                     </view>
-                    <tabBarItem key="tabBarItem" id="39f-XG-yjM"/>
+                    <tabBarItem key="tabBarItem" title="Lost Item Reports" id="39f-XG-yjM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U3e-SJ-pdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -59,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="738" y="-822"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Admin Tab Bar Controller-->
         <scene sceneID="YYD-gQ-zlm">
             <objects>
-                <tabBarController id="jlR-if-flf" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Admin" id="jlR-if-flf" customClass="AdminTabBarController" customModule="AdminSide" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zbh-Ip-VIp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

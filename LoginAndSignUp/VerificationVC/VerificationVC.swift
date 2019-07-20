@@ -81,9 +81,17 @@ class VerificationVC: AppBaseVC {
                     
                     //.updateChildValues([AppHelper.sharedInstance.userDetailsDic["PhoneNumber"]:""])
                 }
-               // let vc = HomeVC()
-               // self!.navigationController?.pushViewController(vc, animated: true)
-               
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                // instantiate your desired ViewController
+                let rootController = storyboard.instantiateViewController(withIdentifier: "Admin") as! AdminTabBarController
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                
+//                // Because self.window is an optional you should check it's value first and assign your rootViewController
+                if let window = appDelegate.window {
+                    window.rootViewController = rootController
+
+                }
             }
             
             else{

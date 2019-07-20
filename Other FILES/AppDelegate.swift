@@ -19,8 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
        
-        self.navigationController = UINavigationController.init(rootViewController:LoginVC())
-        
+        if Auth.auth().currentUser != nil{
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            // instantiate your desired ViewController
+            let rootController = storyboard.instantiateViewController(withIdentifier: "Admin") as! AdminTabBarController
+            self.navigationController = UINavigationController.init(rootViewController:rootController)
+        }
+        else{
+            self.navigationController = UINavigationController.init(rootViewController:LoginVC())
+        }
+       
         self.navigationController.setNavigationBarHidden(true, animated: false)
         window?.rootViewController = self.navigationController
         window?.makeKeyAndVisible()

@@ -6,18 +6,18 @@ target 'AdminSide' do
   use_frameworks!
 
   # Pods for AdminSide
- pod 'Firebase'
-pod 'CountryPickerView'
+  pod 'Firebase'
+  pod 'CountryPickerView'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Core'
   pod 'Firebase/Storage'
   pod 'Firebase/Firestore'
-pod 'GooglePlaces'
+  pod 'GooglePlaces'
   pod 'GoogleMaps'
-pod 'MBProgressHUD', '~> 1.1.0'
-
-pod 'MessageKit','~> 2.0.0'
+  pod 'MBProgressHUD', '~> 1.1.0'
+  pod 'Firebase/Messaging'
+  pod 'MessageKit','~> 2.0.0'
 
 
   target 'AdminSideTests' do

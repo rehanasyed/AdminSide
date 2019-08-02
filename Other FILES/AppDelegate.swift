@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -18,6 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         FirebaseApp.configure()
+        
+        Messaging.messaging().subscribe(toTopic: "Danger") { error in
+            print(error)
+        }
        
         if Auth.auth().currentUser != nil{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

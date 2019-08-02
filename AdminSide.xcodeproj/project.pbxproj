@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		102742F422F4807B00FC547C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 102742F322F4807B00FC547C /* GoogleService-Info.plist */; };
 		181740EE22DE6E68008DFF72 /* AdminTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181740ED22DE6E68008DFF72 /* AdminTabBarController.swift */; };
 		18683F6722DFC68900B31EBA /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18683F6222DFC68800B31EBA /* AppSettings.swift */; };
 		18683F6822DFC68900B31EBA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18683F6322DFC68800B31EBA /* ChatViewController.swift */; };
@@ -41,7 +42,6 @@
 		1883F8CC22BE168C00F9CF52 /* SignUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1883F8CB22BE168C00F9CF52 /* SignUpVC.xib */; };
 		188793F922BFAA1700FABB6E /* AppBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188793F822BFAA1700FABB6E /* AppBaseVC.swift */; };
 		1887940322BFC30F00FABB6E /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887940222BFC30F00FABB6E /* AppHelper.swift */; };
-		1887940522BFC51600FABB6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1887940422BFC51600FABB6E /* GoogleService-Info.plist */; };
 		18C2235F22BC1F74008E2F49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C2235E22BC1F74008E2F49 /* AppDelegate.swift */; };
 		18C2236422BC1F74008E2F49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C2236222BC1F74008E2F49 /* Main.storyboard */; };
 		18C2236622BC1F74008E2F49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C2236522BC1F74008E2F49 /* Assets.xcassets */; };
@@ -71,6 +71,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		102742F322F4807B00FC547C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		102742F722F48FEC00FC547C /* AdminSide.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AdminSide.entitlements; sourceTree = "<group>"; };
 		181740ED22DE6E68008DFF72 /* AdminTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTabBarController.swift; sourceTree = "<group>"; };
 		18683F6222DFC68800B31EBA /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		18683F6322DFC68800B31EBA /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -105,7 +107,6 @@
 		1883F8CB22BE168C00F9CF52 /* SignUpVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpVC.xib; sourceTree = "<group>"; };
 		188793F822BFAA1700FABB6E /* AppBaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBaseVC.swift; sourceTree = "<group>"; };
 		1887940222BFC30F00FABB6E /* AppHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
-		1887940422BFC51600FABB6E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18C2235B22BC1F74008E2F49 /* AdminSide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdminSide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C2235E22BC1F74008E2F49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18C2236322BC1F74008E2F49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -273,17 +274,10 @@
 			path = BaseFile;
 			sourceTree = "<group>";
 		};
-		188793FC22BFAA8100FABB6E /* MapLocator  */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "MapLocator ";
-			sourceTree = "<group>";
-		};
 		18C2235222BC1F74008E2F49 = {
 			isa = PBXGroup;
 			children = (
-				188793FC22BFAA8100FABB6E /* MapLocator  */,
+				102742F722F48FEC00FC547C /* AdminSide.entitlements */,
 				188793F722BFAA0200FABB6E /* BaseFile */,
 				1883F8BD22BE144D00F9CF52 /* LoginAndSignUp */,
 				1883F8B822BE0F3200F9CF52 /* HelperClasses */,
@@ -312,12 +306,12 @@
 		18C2235D22BC1F74008E2F49 /* Other Files */ = {
 			isa = PBXGroup;
 			children = (
-				1887940422BFC51600FABB6E /* GoogleService-Info.plist */,
 				18C2235E22BC1F74008E2F49 /* AppDelegate.swift */,
 				18C2236222BC1F74008E2F49 /* Main.storyboard */,
 				18C2236522BC1F74008E2F49 /* Assets.xcassets */,
 				18C2236722BC1F74008E2F49 /* LaunchScreen.storyboard */,
 				18C2236A22BC1F74008E2F49 /* Info.plist */,
+				102742F322F4807B00FC547C /* GoogleService-Info.plist */,
 			);
 			path = "Other Files";
 			sourceTree = "<group>";
@@ -436,6 +430,11 @@
 				TargetAttributes = {
 					18C2235A22BC1F74008E2F49 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					18C2236E22BC1F74008E2F49 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -473,13 +472,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1883F8CC22BE168C00F9CF52 /* SignUpVC.xib in Resources */,
+				102742F422F4807B00FC547C /* GoogleService-Info.plist in Resources */,
 				1883F8C322BE14D300F9CF52 /* LoginVC.xib in Resources */,
 				18683F7722E129EF00B31EBA /* Podfile in Resources */,
 				18C2236922BC1F74008E2F49 /* LaunchScreen.storyboard in Resources */,
 				18C2236622BC1F74008E2F49 /* Assets.xcassets in Resources */,
 				18C2236422BC1F74008E2F49 /* Main.storyboard in Resources */,
 				1883F8C822BE14FB00F9CF52 /* VerificationVC.xib in Resources */,
-				1887940522BFC51600FABB6E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -847,6 +846,7 @@
 			baseConfigurationReference = C63105E7A95E0E8ED711D449 /* Pods-AdminSide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AdminSide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U9L575X827;
 				INFOPLIST_FILE = "$(SRCROOT)/Other FILES/Info.plist";
@@ -854,7 +854,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = rehana.AdminSide;
+				PRODUCT_BUNDLE_IDENTIFIER = EmergencyApp.AdminSide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -866,6 +866,7 @@
 			baseConfigurationReference = A58E165A9139297D2164401A /* Pods-AdminSide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AdminSide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U9L575X827;
 				INFOPLIST_FILE = "$(SRCROOT)/Other FILES/Info.plist";
@@ -873,7 +874,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = rehana.AdminSide;
+				PRODUCT_BUNDLE_IDENTIFIER = EmergencyApp.AdminSide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

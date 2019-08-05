@@ -20,6 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        if let notification = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] {
+            UserDefaults.standard.setValue(notification, forKey: "bc")
+            
+        }
+        if let not = UserDefaults.standard.value(forKey: "bc")  {
+            print(not)
+            print("Notification")
+        }
+    
+        
         FirebaseApp.configure()
         
         if #available(iOS 10.0, *) {
@@ -37,6 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         application.registerForRemoteNotifications()
+        
+        Messaging.messaging().delegate = self
         
         
         Messaging.messaging().subscribe(toTopic: "Danger") { error in
@@ -94,8 +106,10 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print("Notification rec")
         let userInfo = notification.request.content.userInfo
-        
+        let location =  userInfo["gcm.notification.Location"]
+        print(location)
         // With swizzling disabled you must let Messaging know about the message, for Analytics
         // Messaging.messaging().appDidReceiveMessage(userInfo)
         // Print message ID.
@@ -114,6 +128,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
         let userInfo = response.notification.request.content.userInfo
+        let location =  userInfo["gcm.notification.Location"]
         // Print message ID.
         if let messageID = userInfo[""] {
             print("Message ID: \(messageID)")

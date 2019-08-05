@@ -132,10 +132,6 @@ class ChatScreenVC: MessagesViewController {
             }
         }
     }
-    
- 
-    
-    
 }
 
 extension ChatScreenVC: MessagesDataSource{

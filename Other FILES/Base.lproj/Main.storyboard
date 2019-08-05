@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Emergency Chat-->
+        <!--Chat View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ChatViewController" customModule="AdminSide" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,12 +20,12 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Emergency Chat" id="iOb-kH-QJX"/>
+                    <navigationItem key="navigationItem" id="XOb-e8-xAh"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1459" y="-204"/>
+            <point key="canvasLocation" x="2368.1159420289855" y="-204.24107142857142"/>
         </scene>
         <!--Lost Item Reports-->
         <scene sceneID="ZsA-ch-ceo">
@@ -71,12 +71,31 @@
                     <connections>
                         <segue destination="6S1-KR-7dw" kind="relationship" relationship="viewControllers" id="EIZ-JD-FiH"/>
                         <segue destination="cxe-SR-spO" kind="relationship" relationship="viewControllers" id="qHK-cT-nfQ"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="dcn-iP-I04"/>
+                        <segue destination="oTl-4P-w1T" kind="relationship" relationship="viewControllers" id="dcn-iP-I04"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgx-pm-hM5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-179" y="-203"/>
+        </scene>
+        <!--Emergency Chat-->
+        <scene sceneID="lo3-Y6-JI2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oTl-4P-w1T" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Emergency Chat" id="iOb-kH-QJX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b5m-9c-KbG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Kbl-m6-ePJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jWK-r5-zpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1457.9710144927537" y="-204.24107142857142"/>
         </scene>
     </scenes>
     <resources>

@@ -11,6 +11,7 @@
 		181740EE22DE6E68008DFF72 /* AdminTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181740ED22DE6E68008DFF72 /* AdminTabBarController.swift */; };
 		181919BA22F8C9CA000B1881 /* EmergencyScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181919B822F8C9C9000B1881 /* EmergencyScreenVC.swift */; };
 		181919BB22F8C9CA000B1881 /* EmergencyScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181919B922F8C9C9000B1881 /* EmergencyScreenVC.xib */; };
+		181919BD22F8CEA5000B1881 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181919BC22F8CEA4000B1881 /* LocationHelper.swift */; };
 		18683F6722DFC68900B31EBA /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18683F6222DFC68800B31EBA /* AppSettings.swift */; };
 		18683F6822DFC68900B31EBA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18683F6322DFC68800B31EBA /* ChatViewController.swift */; };
 		18683F6922DFC68900B31EBA /* ChatScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18683F6422DFC68800B31EBA /* ChatScreenVC.swift */; };
@@ -78,6 +79,7 @@
 		181740ED22DE6E68008DFF72 /* AdminTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTabBarController.swift; sourceTree = "<group>"; };
 		181919B822F8C9C9000B1881 /* EmergencyScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyScreenVC.swift; sourceTree = "<group>"; };
 		181919B922F8C9C9000B1881 /* EmergencyScreenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmergencyScreenVC.xib; sourceTree = "<group>"; };
+		181919BC22F8CEA4000B1881 /* LocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		18683F6222DFC68800B31EBA /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		18683F6322DFC68800B31EBA /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		18683F6422DFC68800B31EBA /* ChatScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatScreenVC.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 		1883F8B822BE0F3200F9CF52 /* HelperClasses */ = {
 			isa = PBXGroup;
 			children = (
+				181919BC22F8CEA4000B1881 /* LocationHelper.swift */,
 				1883F8B922BE0F4500F9CF52 /* FirebaseAuthenticationHandler.swift */,
 				1887940222BFC30F00FABB6E /* AppHelper.swift */,
 				1883F8BB22BE0F5200F9CF52 /* FirebaseDBHandler.swift */,
@@ -670,6 +673,7 @@
 				18683F8522E12BF000B31EBA /* Channel.swift in Sources */,
 				181919BA22F8C9CA000B1881 /* EmergencyScreenVC.swift in Sources */,
 				1883F8B522BE0EE800F9CF52 /* TextFieldDesign.swift in Sources */,
+				181919BD22F8CEA5000B1881 /* LocationHelper.swift in Sources */,
 				18683F8622E12BF000B31EBA /* File.swift in Sources */,
 				18683F8322E12BF000B31EBA /* Message.swift in Sources */,
 				1883F8C122BE14C900F9CF52 /* LoginVC.swift in Sources */,

@@ -52,8 +52,8 @@ extension EmergencyScreenVC{
     }
     
     func addSelectedLocationMarker(Type type : String){
-        selectedLocationMarker.icon = GoogleMapsManager.sharedInstance.setMarkerImage(image: UIImage(named: type)!, scaledToSize: CGSize(width: 50, height: 50))
-        selectedLocationMarker.map = self.MapView
+        userLocationMarker.icon = GoogleMapsManager.sharedInstance.setMarkerImage(image: UIImage(named: type)!, scaledToSize: CGSize(width: 50, height: 50))
+        userLocationMarker.map = self.mapView
     }
     
     
@@ -72,16 +72,16 @@ extension EmergencyScreenVC : GMSMapViewDelegate{
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         
-        selectedLocationMarker = marker
+        userLocationMarker = marker
         GoogleMapsManager.sharedInstance.getDirections(Origin: self.KarachiLocation.coordinate, Destination: marker.position)
         
         GoogleMapsManager.sharedInstance.getDirections(Origin: self.KarachiLocation.coordinate, Destination: marker.position) { [weak self](routes) in
             DispatchQueue.main.async {
-                self!.MapView.clear()
+                self!.mapView.clear()
                 self?.addCurrentLocationMarker()
                 self?.addSelectedLocationMarker(Type: self!.currentType)
                 self!.zoomOut()
-                GoogleMapsManager.sharedInstance.drawPolyLineOnMap(Routes: routes, Map: self!.MapView)
+                GoogleMapsManager.sharedInstance.drawPolyLineOnMap(Routes: routes, Map: self!.mapView)
                 
             }
             

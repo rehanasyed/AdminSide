@@ -36,11 +36,11 @@ class EmergencyScreenVC: UIViewController {
 
 }
 
-extension MapVC{
+extension EmergencyScreenVC{
     
     func addMarkersInMap(Location location : CLLocationCoordinate2D, Type imageName : String){
         let marker = GMSMarker(position: location)
-        marker.map = self.MapView
+        marker.map = self.mapView
         marker.icon = GoogleMapsManager.sharedInstance.setMarkerImage(image: UIImage(named: imageName)!, scaledToSize: CGSize(width: 50, height: 50))
         
     }
@@ -48,7 +48,7 @@ extension MapVC{
     func addCurrentLocationMarker(){
         currentLocationMarker.position = CLLocationCoordinate2D(latitude: KarachiLocation.coordinate.latitude, longitude: KarachiLocation.coordinate.longitude)
         currentLocationMarker.appearAnimation = .pop
-        currentLocationMarker.map = self.MapView
+        currentLocationMarker.map = self.mapView
     }
     
     func addSelectedLocationMarker(Type type : String){
@@ -59,16 +59,16 @@ extension MapVC{
     
     func adjustZoom (Radius rad : Float){
         self.currentZoomLevel = 14.5 - (rad/7500)
-        self.MapView.camera = GMSCameraPosition.camera(withTarget: KarachiLocation.coordinate, zoom: self.currentZoomLevel)
+        self.mapView.camera = GMSCameraPosition.camera(withTarget: KarachiLocation.coordinate, zoom: self.currentZoomLevel)
     }
     
     func zoomOut(){
-        self.MapView.camera = GMSCameraPosition.camera(withTarget: KarachiLocation.coordinate, zoom: 15)
+        self.mapView.camera = GMSCameraPosition.camera(withTarget: KarachiLocation.coordinate, zoom: 15)
     }
     
 }
 
-extension MapVC : GMSMapViewDelegate{
+extension EmergencyScreenVC : GMSMapViewDelegate{
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         

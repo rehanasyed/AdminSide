@@ -28,9 +28,17 @@ class EmergencyScreenVC: UIViewController {
         
         LocationHelper.sharedInstance.getCurrentLocation = {[weak self](location) in
             self!.currentLocation = location.coordinate
-            let camera = GMSCameraPosition.camera(withLatitude: self!.KarachiLocation.coordinate.latitude, longitude: self!.KarachiLocation.coordinate.longitude, zoom: self!.currentZoomLevel)
-            self!.mapView.camera = camera
-            self!.addCurrentLocationMarker()
+            GoogleMapsManager.sharedInstance.getDirections(Origin: self!.currentLocation , Destination: self!.userLocation) { [weak self](routes) in
+                DispatchQueue.main.async {
+                    self?.addCurrentLocationMarker()
+                    self?.addUserLocationMarker(Type: self!.currentType)
+                    self!.zoomOut()
+                    GoogleMapsManager.sharedInstance.drawPolyLineOnMap(Routes: routes, Map: self!.mapView)
+                    
+                }
+                
+            }
+
         }
     }
 
@@ -51,7 +59,7 @@ extension EmergencyScreenVC{
         currentLocationMarker.map = self.mapView
     }
     
-    func addSelectedLocationMarker(Type type : String){
+    func addUserLocationMarker(Type type : String){
         userLocationMarker.icon = GoogleMapsManager.sharedInstance.setMarkerImage(image: UIImage(named: type)!, scaledToSize: CGSize(width: 50, height: 50))
         userLocationMarker.map = self.mapView
     }
@@ -70,23 +78,23 @@ extension EmergencyScreenVC{
 
 extension EmergencyScreenVC : GMSMapViewDelegate{
     
-    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        
-        userLocationMarker = marker
-        GoogleMapsManager.sharedInstance.getDirections(Origin: self.KarachiLocation.coordinate, Destination: marker.position)
-        
-        GoogleMapsManager.sharedInstance.getDirections(Origin: self.KarachiLocation.coordinate, Destination: marker.position) { [weak self](routes) in
-            DispatchQueue.main.async {
-                self!.mapView.clear()
-                self?.addCurrentLocationMarker()
-                self?.addSelectedLocationMarker(Type: self!.currentType)
-                self!.zoomOut()
-                GoogleMapsManager.sharedInstance.drawPolyLineOnMap(Routes: routes, Map: self!.mapView)
-                
-            }
-            
-        }
-        return true
-    }
-    
+//    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+//        
+//        userLocationMarker = marker
+//        GoogleMapsManager.sharedInstance.getDirections(Origin: self.KarachiLocation.coordinate, Destination: marker.position)
+//        
+//        GoogleMapsManager.sharedInstance.getDirections(Origin: self.KarachiLocation.coordinate, Destination: marker.position) { [weak self](routes) in
+//            DispatchQueue.main.async {
+//                self!.mapView.clear()
+//                self?.addCurrentLocationMarker()
+//                //self?.addSelectedLocationMarker(Type: self!.currentType)
+//                self!.zoomOut()
+//                GoogleMapsManager.sharedInstance.drawPolyLineOnMap(Routes: routes, Map: self!.mapView)
+//                
+//            }
+//            
+//        }
+//        return true
+//    }
+//    
 }

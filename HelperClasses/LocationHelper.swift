@@ -41,14 +41,12 @@ class LocationHelper : NSObject{
 
 extension LocationHelper : CLLocationManagerDelegate{
     
-  
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0] as CLLocation
         getCurrentLocation!(userLocation)
-        locationManager.stopUpdatingLocation()
+        //locationManager.stopUpdatingLocation()
         
     }
-    
     
     
 }

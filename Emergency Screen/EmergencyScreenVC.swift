@@ -18,7 +18,7 @@ class EmergencyScreenVC: UIViewController {
     var userLocation : CLLocationCoordinate2D = CLLocationCoordinate2D()
     let KarachiLocation =  CLLocation(latitude: 24.8607, longitude: 67.0011)
     var currentZoomLevel : Float = 15.0
-    var currentType = ""
+    var currentType = "User"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,19 +26,17 @@ class EmergencyScreenVC: UIViewController {
         // Do any additional setup after loading the view.
         mapView.delegate = self
         
+        self.addUserLocationMarker(Type: self.currentType)
         LocationHelper.sharedInstance.getCurrentLocation = {[weak self](location) in
             self!.currentLocation = location.coordinate
             GoogleMapsManager.sharedInstance.getDirections(Origin: self!.currentLocation , Destination: self!.userLocation) { [weak self](routes) in
                 DispatchQueue.main.async {
-                    self?.addCurrentLocationMarker()
-                    self?.addUserLocationMarker(Type: self!.currentType)
+                    self!.addCurrentLocationMarker()
                     self!.zoomOut()
                     GoogleMapsManager.sharedInstance.drawPolyLineOnMap(Routes: routes, Map: self!.mapView)
                     
                 }
-                
             }
-
         }
     }
 

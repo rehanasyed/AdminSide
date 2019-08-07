@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 import UserNotifications
-
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -108,8 +108,14 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         print("Notification rec")
         let userInfo = notification.request.content.userInfo
-        let location =  userInfo["gcm.notification.Location"]
-        print(location)
+        guard let location =  userInfo["gcm.notification.Location"] as? [String:CLLocationDegrees] else{return}
+        guard let latitude = location["lat"] else {return}
+        guard let longitude = location["long"] else {return}
+        
+        let vc = EmergencyScreenVC()
+        vc.userLocation = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        
+        //print(location)
         // With swizzling disabled you must let Messaging know about the message, for Analytics
         // Messaging.messaging().appDidReceiveMessage(userInfo)
         // Print message ID.
@@ -129,6 +135,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
         let userInfo = response.notification.request.content.userInfo
         let location =  userInfo["gcm.notification.Location"]
+        
         // Print message ID.
         if let messageID = userInfo[""] {
             print("Message ID: \(messageID)")

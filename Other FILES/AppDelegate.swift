@@ -10,25 +10,24 @@ import UIKit
 import Firebase
 import UserNotifications
 import CoreLocation
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var navigationController:UINavigationController!
+    var shouldShowEmergencyScreen : Bool = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        GMSServices.provideAPIKey(AppConstant.GoogleMapApiKey)
         
         if let notification = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] {
-            UserDefaults.standard.setValue(notification, forKey: "bc")
-            
+            //UserDefaults.standard.setValue(notification, forKey: "bc")
+            shouldShowEmergencyScreen = true
         }
-        if let not = UserDefaults.standard.value(forKey: "bc")  {
-            print(not)
-            print("Notification")
-        }
-    
+       
         
         FirebaseApp.configure()
         
@@ -60,6 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             // instantiate your desired ViewController
             let rootController = storyboard.instantiateViewController(withIdentifier: "Admin") as! AdminTabBarController
+            rootController.selectedIndex = shouldShowEmergencyScreen ? 3 : 0
             self.navigationController = UINavigationController.init(rootViewController:rootController)
         }
         else{

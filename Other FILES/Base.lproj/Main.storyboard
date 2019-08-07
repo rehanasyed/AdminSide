@@ -27,6 +27,37 @@
             </objects>
             <point key="canvasLocation" x="2368.1159420289855" y="-204.24107142857142"/>
         </scene>
+        <!--SOS Tracker-->
+        <scene sceneID="unm-x4-Sgg">
+            <objects>
+                <viewController id="lTx-94-cUf" customClass="EmergencyScreenVC" customModule="AdminSide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="h5n-e3-xBB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TqK-Ew-EFv" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CKd-vE-vwd" firstAttribute="trailing" secondItem="TqK-Ew-EFv" secondAttribute="trailing" id="Kux-vD-psS"/>
+                            <constraint firstAttribute="bottom" secondItem="TqK-Ew-EFv" secondAttribute="bottom" id="Tia-bq-FvR"/>
+                            <constraint firstItem="TqK-Ew-EFv" firstAttribute="top" secondItem="h5n-e3-xBB" secondAttribute="top" id="ab4-j7-f1p"/>
+                            <constraint firstItem="TqK-Ew-EFv" firstAttribute="leading" secondItem="CKd-vE-vwd" secondAttribute="leading" id="vmh-ZC-waO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CKd-vE-vwd"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="SOS Tracker" id="Xm4-Sf-wkV"/>
+                    <connections>
+                        <outlet property="mapView" destination="TqK-Ew-EFv" id="WPa-tJ-ASC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eoS-kF-SRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-75" y="780"/>
+        </scene>
         <!--Lost Item Reports-->
         <scene sceneID="ZsA-ch-ceo">
             <objects>
@@ -72,11 +103,12 @@
                         <segue destination="6S1-KR-7dw" kind="relationship" relationship="viewControllers" id="EIZ-JD-FiH"/>
                         <segue destination="cxe-SR-spO" kind="relationship" relationship="viewControllers" id="qHK-cT-nfQ"/>
                         <segue destination="oTl-4P-w1T" kind="relationship" relationship="viewControllers" id="dcn-iP-I04"/>
+                        <segue destination="lTx-94-cUf" kind="relationship" relationship="viewControllers" id="XIc-Qh-iNN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgx-pm-hM5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-179" y="-203"/>
+            <point key="canvasLocation" x="-74" y="-204"/>
         </scene>
         <!--Emergency Chat-->
         <scene sceneID="lo3-Y6-JI2">

@@ -13,6 +13,7 @@
 		181919BB22F8C9CA000B1881 /* EmergencyScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181919B922F8C9C9000B1881 /* EmergencyScreenVC.xib */; };
 		181919BD22F8CEA5000B1881 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181919BC22F8CEA4000B1881 /* LocationHelper.swift */; };
 		181919BF22FA3405000B1881 /* GoogleMapsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181919BE22FA3405000B1881 /* GoogleMapsManager.swift */; };
+		182A232822FB7B1400C3DE84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C2236222BC1F74008E2F49 /* Main.storyboard */; };
 		18683F6722DFC68900B31EBA /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18683F6222DFC68800B31EBA /* AppSettings.swift */; };
 		18683F6822DFC68900B31EBA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18683F6322DFC68800B31EBA /* ChatViewController.swift */; };
 		18683F6922DFC68900B31EBA /* ChatScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18683F6422DFC68800B31EBA /* ChatScreenVC.swift */; };
@@ -47,7 +48,6 @@
 		188793F922BFAA1700FABB6E /* AppBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188793F822BFAA1700FABB6E /* AppBaseVC.swift */; };
 		1887940322BFC30F00FABB6E /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887940222BFC30F00FABB6E /* AppHelper.swift */; };
 		18C2235F22BC1F74008E2F49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C2235E22BC1F74008E2F49 /* AppDelegate.swift */; };
-		18C2236422BC1F74008E2F49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C2236222BC1F74008E2F49 /* Main.storyboard */; };
 		18C2236622BC1F74008E2F49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C2236522BC1F74008E2F49 /* Assets.xcassets */; };
 		18C2236922BC1F74008E2F49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C2236722BC1F74008E2F49 /* LaunchScreen.storyboard */; };
 		18C2237422BC1F74008E2F49 /* AdminSideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C2237322BC1F74008E2F49 /* AdminSideTests.swift */; };
@@ -500,8 +500,8 @@
 				1883F8C322BE14D300F9CF52 /* LoginVC.xib in Resources */,
 				18683F7722E129EF00B31EBA /* Podfile in Resources */,
 				18C2236922BC1F74008E2F49 /* LaunchScreen.storyboard in Resources */,
+				182A232822FB7B1400C3DE84 /* Main.storyboard in Resources */,
 				18C2236622BC1F74008E2F49 /* Assets.xcassets in Resources */,
-				18C2236422BC1F74008E2F49 /* Main.storyboard in Resources */,
 				1883F8C822BE14FB00F9CF52 /* VerificationVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1025FAA622FC2EA40031AF89 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1025FAA522FC2EA40031AF89 /* SessionManager.swift */; };
 		102742F422F4807B00FC547C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 102742F322F4807B00FC547C /* GoogleService-Info.plist */; };
 		181740EE22DE6E68008DFF72 /* AdminTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181740ED22DE6E68008DFF72 /* AdminTabBarController.swift */; };
 		181919BA22F8C9CA000B1881 /* EmergencyScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181919B822F8C9C9000B1881 /* EmergencyScreenVC.swift */; };
@@ -75,6 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1025FAA522FC2EA40031AF89 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		102742F322F4807B00FC547C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		102742F722F48FEC00FC547C /* AdminSide.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AdminSide.entitlements; sourceTree = "<group>"; };
 		181740ED22DE6E68008DFF72 /* AdminTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTabBarController.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				1883F8B922BE0F4500F9CF52 /* FirebaseAuthenticationHandler.swift */,
 				1887940222BFC30F00FABB6E /* AppHelper.swift */,
 				1883F8BB22BE0F5200F9CF52 /* FirebaseDBHandler.swift */,
+				1025FAA522FC2EA40031AF89 /* SessionManager.swift */,
 			);
 			path = HelperClasses;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				181919BA22F8C9CA000B1881 /* EmergencyScreenVC.swift in Sources */,
 				1883F8B522BE0EE800F9CF52 /* TextFieldDesign.swift in Sources */,
 				181919BD22F8CEA5000B1881 /* LocationHelper.swift in Sources */,
+				1025FAA622FC2EA40031AF89 /* SessionManager.swift in Sources */,
 				18683F8622E12BF000B31EBA /* File.swift in Sources */,
 				18683F8322E12BF000B31EBA /* Message.swift in Sources */,
 				1883F8C122BE14C900F9CF52 /* LoginVC.swift in Sources */,

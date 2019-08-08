@@ -112,8 +112,11 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         guard let latitude = location["lat"] else {return}
         guard let longitude = location["long"] else {return}
         
-        let vc = EmergencyScreenVC()
-        vc.userLocation = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        if let tabBarVC = AppHelper.sharedInstance.currentVC as? AdminTabBarController{
+            tabBarVC.selectedIndex = 3
+        }
+        //let vc = EmergencyScreenVC()
+        //vc.userLocation = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
         //print(location)
         // With swizzling disabled you must let Messaging know about the message, for Analytics

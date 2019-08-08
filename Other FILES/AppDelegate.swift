@@ -108,10 +108,8 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         print("Notification rec")
         let userInfo = notification.request.content.userInfo
-        guard let location =  userInfo["gcm.notification.Location"] as? [String:CLLocationDegrees] else{return}
-        guard let latitude = location["lat"] else {return}
-        guard let longitude = location["long"] else {return}
-        
+        guard let userUID =  userInfo["UserID"] as? String else{return}
+        Session.sharedInstance.userLocationNode = userUID
         if let tabBarVC = AppHelper.sharedInstance.currentVC as? AdminTabBarController{
             tabBarVC.selectedIndex = 3
         }

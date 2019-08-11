@@ -12,7 +12,7 @@ import CoreLocation
 class Session : NSObject{
 
     var userLocation : CLLocationCoordinate2D = CLLocationCoordinate2D()
-    var userLocationNode = String()
+    var userLocationNode : String? = nil
     
     private static var _obj : Session? = nil
     

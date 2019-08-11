@@ -22,14 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         GMSServices.provideAPIKey(AppConstant.GoogleMapApiKey)
+        FirebaseApp.configure()
         
-        if let notification = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] {
+        if let _ = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] {
             //UserDefaults.standard.setValue(notification, forKey: "bc")
             shouldShowEmergencyScreen = true
         }
        
-        
-        FirebaseApp.configure()
         
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)

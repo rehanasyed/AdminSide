@@ -8,6 +8,8 @@
 
 import UIKit
 import GoogleMaps
+import FirebaseDatabase
+import FirebaseAuth
 
 class EmergencyScreenVC: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
@@ -19,15 +21,32 @@ class EmergencyScreenVC: UIViewController {
     let KarachiLocation =  CLLocation(latitude: 24.8607, longitude: 67.0011)
     var currentZoomLevel : Float = 15.0
     var currentType = "Reports"
+    var ref : DatabaseReference! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        ref = Database.database().reference()
         // Do any additional setup after loading the view.
         mapView.delegate = self
         
+        if Session.sharedInstance.userLocationNode == ""
+        {
+            return
+        }
+        
+        startSOSTracking()
+    }
+    
+    func startSOSTracking(){
         self.addUserLocationMarker(Type: self.currentType)
+        
         LocationHelper.sharedInstance.getCurrentLocation = {[weak self](location) in
+            self!.ref.child("InDanger").child(Session.sharedInstance.userLocationNode).observe(.value) { (snapshot) in
+                print(snapshot)
+                
+            }
+            
             self!.currentLocation = location.coordinate
             GoogleMapsManager.sharedInstance.getDirections(Origin: self!.currentLocation , Destination: self!.userLocation) { [weak self](routes) in
                 DispatchQueue.main.async {

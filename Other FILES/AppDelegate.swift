@@ -134,12 +134,18 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
         let userInfo = response.notification.request.content.userInfo
-        let location =  userInfo["gcm.notification.Location"]
         
-        // Print message ID.
-        if let messageID = userInfo[""] {
-            print("Message ID: \(messageID)")
+        
+        guard let userUID =  userInfo["UserID"] as? String else{return}
+        Session.sharedInstance.userLocationNode = userUID
+        if let tabBarVC = AppHelper.sharedInstance.currentVC as? AdminTabBarController{
+            tabBarVC.selectedIndex = 3
+            if let vc = tabBarVC.selectedViewController as? EmergencyScreenVC{
+                vc.shouldAdjustCamera = true
+                vc.startSOSTracking()
+            }
         }
+        
         
         // Print full message.
         print(userInfo)

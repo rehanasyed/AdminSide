@@ -19,9 +19,12 @@ class EmergencyScreenVC: UIViewController {
     var currentLocation : CLLocationCoordinate2D = CLLocationCoordinate2D()
     var userLocation : CLLocationCoordinate2D = CLLocationCoordinate2D()
     let KarachiLocation =  CLLocation(latitude: 24.8607, longitude: 67.0011)
+    var selectedLocation : CLLocationCoordinate2D!
+    
     var currentZoomLevel : Float = 15.0
     var currentType = "Reports"
     var ref : DatabaseReference! = nil
+    var shouldAdjustCamera : Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,21 +45,22 @@ class EmergencyScreenVC: UIViewController {
         self.addUserLocationMarker(Type: self.currentType)
         
         LocationHelper.sharedInstance.getCurrentLocation = {[weak self](location) in
-            self!.ref.child("InDanger").child(Session.sharedInstance.userLocationNode).observe(.value) { (snapshot) in
-                print(snapshot)
-                
-            }
-            
-            self!.currentLocation = location.coordinate
-            GoogleMapsManager.sharedInstance.getDirections(Origin: self!.currentLocation , Destination: self!.userLocation) { [weak self](routes) in
-                DispatchQueue.main.async {
-                    self!.addCurrentLocationMarker()
-                    self!.zoomOut()
-                    GoogleMapsManager.sharedInstance.drawPolyLineOnMap(Routes: routes, Map: self!.mapView)
+        self!.ref.child("InDanger").child(Session.sharedInstance.userLocationNode!).observe(.value) { (snapshot) in
+                guard let locationDic = snapshot.value as? [String:CLLocationDegrees] else{return}
+                self?.userLocation = CLLocationCoordinate2D(latitude: locationDic["Lat"]!, longitude: locationDic["Long"]!)
+                self!.currentLocation = location.coordinate
+                self!.selectedLocation = self!.KarachiLocation.coordinate
+                GoogleMapsManager.sharedInstance.getDirections(Origin: self!.currentLocation , Destination: self!.userLocation) { [weak self](routes) in
+                    DispatchQueue.main.async {
+                        self!.addCurrentLocationMarker()
+                        self!.AdjustCamera()
+                        GoogleMapsManager.sharedInstance.drawPolyLineOnMap(Routes: routes, Map: self!.mapView)
                     
+                        }
+                    }
                 }
             }
-        }
+        
     }
 
 }
@@ -87,8 +91,12 @@ extension EmergencyScreenVC{
         self.mapView.camera = GMSCameraPosition.camera(withTarget: KarachiLocation.coordinate, zoom: self.currentZoomLevel)
     }
     
-    func zoomOut(){
-        self.mapView.camera = GMSCameraPosition.camera(withTarget: KarachiLocation.coordinate, zoom: 15)
+    func AdjustCamera(){
+        if shouldAdjustCamera{
+            self.mapView.camera = GMSCameraPosition.camera(withTarget: selectedLocation, zoom: 15)
+            shouldAdjustCamera = false
+        }
+        
     }
     
 }

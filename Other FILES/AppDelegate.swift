@@ -107,10 +107,14 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         print("Notification rec")
         let userInfo = notification.request.content.userInfo
-        guard let userUID =  userInfo["UserID"] as? String else{return}
+        guard let userUID =  userInfo["gcm.notification.UserID"] as? String else{return}
         Session.sharedInstance.userLocationNode = userUID
         if let tabBarVC = AppHelper.sharedInstance.currentVC as? AdminTabBarController{
             tabBarVC.selectedIndex = 3
+            if let vc = tabBarVC.selectedViewController as? EmergencyScreenVC{
+                vc.shouldAdjustCamera = true
+                //vc.startSOSTracking()
+            }
         }
         //let vc = EmergencyScreenVC()
         //vc.userLocation = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
@@ -136,7 +140,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         let userInfo = response.notification.request.content.userInfo
         
         
-        guard let userUID =  userInfo["UserID"] as? String else{return}
+        guard let userUID =  userInfo["gcm.notification.UserID"] as? String else{return}
         Session.sharedInstance.userLocationNode = userUID
         if let tabBarVC = AppHelper.sharedInstance.currentVC as? AdminTabBarController{
             tabBarVC.selectedIndex = 3

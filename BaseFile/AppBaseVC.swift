@@ -8,7 +8,6 @@
 //
 
 import UIKit
-import UIKit
 import CountryPickerView
 import FirebaseAuth
 import FirebaseDatabase

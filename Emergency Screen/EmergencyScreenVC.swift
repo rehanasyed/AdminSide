@@ -22,7 +22,7 @@ class EmergencyScreenVC: UIViewController {
     var selectedLocation : CLLocationCoordinate2D!
     
     var currentZoomLevel : Float = 15.0
-    var currentType = "Reports"
+    var currentType = "help"
     var ref : DatabaseReference! = nil
     var shouldAdjustCamera : Bool = true
     
@@ -33,7 +33,11 @@ class EmergencyScreenVC: UIViewController {
         // Do any additional setup after loading the view.
         mapView.delegate = self
         
-        if Session.sharedInstance.userLocationNode == ""
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if Session.sharedInstance.userLocationNode == nil
         {
             return
         }
@@ -41,8 +45,9 @@ class EmergencyScreenVC: UIViewController {
         startSOSTracking()
     }
     
+    
     func startSOSTracking(){
-        self.addUserLocationMarker(Type: self.currentType)
+        
         
         LocationHelper.sharedInstance.getCurrentLocation = {[weak self](location) in
         self!.ref.child("InDanger").child(Session.sharedInstance.userLocationNode!).observe(.value) { (snapshot) in
@@ -50,19 +55,25 @@ class EmergencyScreenVC: UIViewController {
                 self?.userLocation = CLLocationCoordinate2D(latitude: locationDic["Lat"]!, longitude: locationDic["Long"]!)
                 self!.currentLocation = location.coordinate
                 self!.selectedLocation = self!.KarachiLocation.coordinate
-                GoogleMapsManager.sharedInstance.getDirections(Origin: self!.currentLocation , Destination: self!.userLocation) { [weak self](routes) in
+                //self!.selectedLocation = self!.currentLocation
+                GoogleMapsManager.sharedInstance.getDirections(Origin: self!.selectedLocation , Destination: self!.userLocation) { [weak self](routes) in
                     DispatchQueue.main.async {
-                        self!.addCurrentLocationMarker()
+                        self!.adjustCurrentLocationMarker()
+                        self!.adjustUserLocationMarker(Type: self!.currentType)
                         self!.AdjustCamera()
                         GoogleMapsManager.sharedInstance.drawPolyLineOnMap(Routes: routes, Map: self!.mapView)
-                    
-                        }
+                        
                     }
                 }
             }
+        }
         
     }
-
+    
+    @IBAction func terminate(_ sender: Any) {
+        
+    }
+    
 }
 
 extension EmergencyScreenVC{
@@ -74,13 +85,14 @@ extension EmergencyScreenVC{
         
     }
     
-    func addCurrentLocationMarker(){
-        currentLocationMarker.position = CLLocationCoordinate2D(latitude: KarachiLocation.coordinate.latitude, longitude: KarachiLocation.coordinate.longitude)
+    func adjustCurrentLocationMarker(){
+        currentLocationMarker.position = CLLocationCoordinate2D(latitude: selectedLocation.latitude, longitude: selectedLocation.longitude)
         currentLocationMarker.appearAnimation = .pop
         currentLocationMarker.map = self.mapView
     }
     
-    func addUserLocationMarker(Type type : String){
+    func adjustUserLocationMarker(Type type : String){
+        userLocationMarker.position = CLLocationCoordinate2D(latitude: self.userLocation.latitude, longitude: self.userLocation.longitude)
         userLocationMarker.icon = GoogleMapsManager.sharedInstance.setMarkerImage(image: UIImage(named: type)!, scaledToSize: CGSize(width: 50, height: 50))
         userLocationMarker.map = self.mapView
     }

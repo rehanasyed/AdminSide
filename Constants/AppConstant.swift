@@ -10,8 +10,9 @@ import Foundation
 
 class AppConstant{
     
-    static var GoogleMapApiKey :String = //"AIzaSyA_9VTI3OAmITzBbMz5AglvP7lNiM6Ff2Y"
-    "AIzaSyBnZaIJeW-B0ufLBIdmoUJNnxXlVF7blvI"
+    static var GoogleMapApiKey : String = "AIzaSyA_9VTI3OAmITzBbMz5AglvP7lNiM6Ff2Y"
+    //static var GoogleMapApiKey : String = "AIzaSyBnZaIJeW-B0ufLBIdmoUJNnxXlVF7blvI"
+    
     static let currentAppMode : AppMode = .Admin
     
 }

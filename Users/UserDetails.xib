@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UserDetails" customModule="AdminSide" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="380" height="250"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Al-2o-8WB">
+                    <rect key="frame" x="5" y="129" width="370" height="2"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="YlL-Yn-cox"/>
+                        <constraint firstAttribute="width" constant="370" id="pIr-VE-xml"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qB2-ti-Wya">
+                    <rect key="frame" x="16" y="25" width="55" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2a-Dg-UN6">
+                    <rect key="frame" x="16" y="71" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="at9-ZP-AoW">
+                    <rect key="frame" x="16" y="156" width="120" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipa-pi-Q0Y">
+                    <rect key="frame" x="16" y="202" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMB-db-CKD">
+                    <rect key="frame" x="300" y="146.5" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="Dzh-uC-imJ"/>
+                        <constraint firstAttribute="height" constant="40" id="Kac-9V-r8a"/>
+                    </constraints>
+                    <state key="normal" image="PhoneNum"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="d2a-Dg-UN6" firstAttribute="top" secondItem="qB2-ti-Wya" secondAttribute="bottom" constant="25" id="47I-9r-ooU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KMB-db-CKD" secondAttribute="trailing" constant="40" id="7GP-uz-Zw2"/>
+                <constraint firstItem="qB2-ti-Wya" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="AWo-ye-l1W"/>
+                <constraint firstItem="qB2-ti-Wya" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Fl9-Zk-l2R"/>
+                <constraint firstItem="ipa-pi-Q0Y" firstAttribute="top" secondItem="at9-ZP-AoW" secondAttribute="bottom" constant="25" id="GeY-Pq-kaz"/>
+                <constraint firstItem="0Al-2o-8WB" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="MZy-We-Nme"/>
+                <constraint firstItem="at9-ZP-AoW" firstAttribute="top" secondItem="0Al-2o-8WB" secondAttribute="bottom" constant="25" id="PtI-GI-Lw6"/>
+                <constraint firstItem="KMB-db-CKD" firstAttribute="centerY" secondItem="at9-ZP-AoW" secondAttribute="centerY" id="faX-sz-OJB"/>
+                <constraint firstItem="at9-ZP-AoW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="r9c-XN-lsO"/>
+                <constraint firstItem="ipa-pi-Q0Y" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="uYL-9h-ux1"/>
+                <constraint firstItem="0Al-2o-8WB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="wFr-2x-txi"/>
+                <constraint firstItem="d2a-Dg-UN6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="wrh-XJ-rPp"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="86.956521739130437" y="18.75"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="PhoneNum" width="75" height="75"/>
+    </resources>
+</document>

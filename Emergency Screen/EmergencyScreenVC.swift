@@ -13,6 +13,7 @@ import FirebaseAuth
 
 class EmergencyScreenVC: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
+    var userDetails = UserDetails.Init()
     
     var currentLocationMarker : GMSMarker = GMSMarker()
     var userLocationMarker : GMSMarker = GMSMarker()
@@ -44,6 +45,19 @@ class EmergencyScreenVC: UIViewController {
         
         startSOSTracking()
     }
+    
+    func animateActionSheet(){
+        UIView.animate(withDuration: 1) {
+            self.userDetails.center.y -= self.userDetails.frame.height
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        view.addSubview(userDetails)
+        animateActionSheet()
+        
+    }
+    
     
     
     func startSOSTracking(){

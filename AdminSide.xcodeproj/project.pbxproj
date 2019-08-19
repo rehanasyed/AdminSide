@@ -52,6 +52,8 @@
 		18C2236922BC1F74008E2F49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C2236722BC1F74008E2F49 /* LaunchScreen.storyboard */; };
 		18C2237422BC1F74008E2F49 /* AdminSideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C2237322BC1F74008E2F49 /* AdminSideTests.swift */; };
 		18C2237F22BC1F74008E2F49 /* AdminSideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C2237E22BC1F74008E2F49 /* AdminSideUITests.swift */; };
+		18E28B94230A7D4C00DF7304 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E28B93230A7D4C00DF7304 /* UserDetails.swift */; };
+		18E28B96230A7D7A00DF7304 /* UserDetails.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E28B95230A7D7A00DF7304 /* UserDetails.xib */; };
 		5364A0E8163342155A599269 /* Pods_AdminSideUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0194205E46D3F38811D0DE /* Pods_AdminSideUITests.framework */; };
 		99FAA5E85CACAC7E3B2E1C64 /* Pods_AdminSideTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 467FDB7CAFE428D074F3DADF /* Pods_AdminSideTests.framework */; };
 		AEC1027E87D10420F8E54143 /* Pods_AdminSide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E7207160DE98BD11C93B49C /* Pods_AdminSide.framework */; };
@@ -127,6 +129,8 @@
 		18C2237A22BC1F74008E2F49 /* AdminSideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdminSideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C2237E22BC1F74008E2F49 /* AdminSideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSideUITests.swift; sourceTree = "<group>"; };
 		18C2238022BC1F74008E2F49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18E28B93230A7D4C00DF7304 /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
+		18E28B95230A7D7A00DF7304 /* UserDetails.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetails.xib; sourceTree = "<group>"; };
 		1B23C0C03327F4F7DCEA0D10 /* Pods-AdminSideUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdminSideUITests.release.xcconfig"; path = "Target Support Files/Pods-AdminSideUITests/Pods-AdminSideUITests.release.xcconfig"; sourceTree = "<group>"; };
 		467FDB7CAFE428D074F3DADF /* Pods_AdminSideTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdminSideTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89F7D69422574E1DA43DBEE5 /* Pods-AdminSideTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdminSideTests.debug.xcconfig"; path = "Target Support Files/Pods-AdminSideTests/Pods-AdminSideTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -295,6 +299,7 @@
 		18C2235222BC1F74008E2F49 = {
 			isa = PBXGroup;
 			children = (
+				18E28B92230A7CDF00DF7304 /* Users */,
 				102742F722F48FEC00FC547C /* AdminSide.entitlements */,
 				181919B722F8C98D000B1881 /* Emergency Screen */,
 				188793F722BFAA0200FABB6E /* BaseFile */,
@@ -352,6 +357,15 @@
 				18C2238022BC1F74008E2F49 /* Info.plist */,
 			);
 			path = AdminSideUITests;
+			sourceTree = "<group>";
+		};
+		18E28B92230A7CDF00DF7304 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				18E28B93230A7D4C00DF7304 /* UserDetails.swift */,
+				18E28B95230A7D7A00DF7304 /* UserDetails.xib */,
+			);
+			path = Users;
 			sourceTree = "<group>";
 		};
 		460190F676F5E6FF61E417A0 /* Frameworks */ = {
@@ -496,6 +510,7 @@
 			files = (
 				1883F8CC22BE168C00F9CF52 /* SignUpVC.xib in Resources */,
 				102742F422F4807B00FC547C /* GoogleService-Info.plist in Resources */,
+				18E28B96230A7D7A00DF7304 /* UserDetails.xib in Resources */,
 				1883F8C322BE14D300F9CF52 /* LoginVC.xib in Resources */,
 				18683F7722E129EF00B31EBA /* Podfile in Resources */,
 				18C2236922BC1F74008E2F49 /* LaunchScreen.storyboard in Resources */,
@@ -692,6 +707,7 @@
 				18683F7622E129EF00B31EBA /* UIImage+Additions.swift in Sources */,
 				18683F6E22E129A900B31EBA /* AppConstant.swift in Sources */,
 				18C2235F22BC1F74008E2F49 /* AppDelegate.swift in Sources */,
+				18E28B94230A7D4C00DF7304 /* UserDetails.swift in Sources */,
 				188793F922BFAA1700FABB6E /* AppBaseVC.swift in Sources */,
 				18683F8822E12BF000B31EBA /* MessageData.swift in Sources */,
 				18683F7922E129EF00B31EBA /* UIViewExtension.swift in Sources */,

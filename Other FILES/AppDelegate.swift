@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         Messaging.messaging().subscribe(toTopic: "Danger") { error in
-            //print(error.loca)
+            
         }
        
         if Auth.auth().currentUser != nil{

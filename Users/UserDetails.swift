@@ -11,7 +11,7 @@ import UIKit
 class UserDetails: UIView {
 
     class func Init ()->UserDetails{
-        let view  = Bundle.main.loadNibNamed("ActionView", owner: self, options: nil)?.first as! UserDetails
+        let view  = Bundle.main.loadNibNamed("UserDetails", owner: self, options: nil)?.first as! UserDetails
         view.layer.cornerRadius = 8
        
         return view

@@ -48,9 +48,21 @@
                                             <action selector="terminate:" destination="lTx-94-cUf" eventType="touchUpInside" id="fxg-Ta-7vq"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BvE-BY-lMU">
+                                        <rect key="frame" x="187" y="753" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="5S8-gr-anE"/>
+                                            <constraint firstAttribute="height" constant="40" id="Aqd-d5-6Cd"/>
+                                        </constraints>
+                                        <state key="normal" image="up-arrow"/>
+                                        <connections>
+                                            <action selector="didTapArrowButton:" destination="lTx-94-cUf" eventType="touchUpInside" id="Nrh-Ri-GVO"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="BvE-BY-lMU" firstAttribute="centerX" secondItem="TqK-Ew-EFv" secondAttribute="centerX" id="PDE-xa-I3m"/>
                                     <constraint firstItem="74S-QZ-hh7" firstAttribute="centerY" secondItem="TqK-Ew-EFv" secondAttribute="centerY" multiplier="0.2" id="Vrj-21-Swa"/>
                                     <constraint firstAttribute="trailing" secondItem="74S-QZ-hh7" secondAttribute="trailing" constant="20" id="oBw-SG-Xow"/>
                                 </constraints>
@@ -61,6 +73,7 @@
                             <constraint firstItem="CKd-vE-vwd" firstAttribute="trailing" secondItem="TqK-Ew-EFv" secondAttribute="trailing" id="Kux-vD-psS"/>
                             <constraint firstAttribute="bottom" secondItem="TqK-Ew-EFv" secondAttribute="bottom" id="Tia-bq-FvR"/>
                             <constraint firstItem="TqK-Ew-EFv" firstAttribute="top" secondItem="h5n-e3-xBB" secondAttribute="top" id="ab4-j7-f1p"/>
+                            <constraint firstItem="BvE-BY-lMU" firstAttribute="bottom" secondItem="CKd-vE-vwd" secondAttribute="bottom" constant="-20" id="aks-mv-DU0"/>
                             <constraint firstItem="TqK-Ew-EFv" firstAttribute="leading" secondItem="CKd-vE-vwd" secondAttribute="leading" id="vmh-ZC-waO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CKd-vE-vwd"/>
@@ -148,5 +161,6 @@
     </scenes>
     <resources>
         <image name="Reports" width="25" height="25"/>
+        <image name="up-arrow" width="128" height="128"/>
     </resources>
 </document>

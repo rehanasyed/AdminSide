@@ -88,6 +88,17 @@ class EmergencyScreenVC: UIViewController {
         
     }
     
+    @IBAction func didTapArrowButton(_ sender: UIButton) {
+        if sender.isSelected{
+            sender.isSelected = false
+        }
+        else{
+            sender.isSelected = true
+        }
+        
+    }
+    
+    
 }
 
 extension EmergencyScreenVC{

@@ -13,6 +13,9 @@ import FirebaseAuth
 
 class EmergencyScreenVC: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var bottomArrowBtn: UIButton!
+    
+    @IBOutlet weak var bottomConstraintArrowBtn: NSLayoutConstraint!
     var userDetails = UserDetails.Init()
     
     var currentLocationMarker : GMSMarker = GMSMarker()
@@ -46,19 +49,12 @@ class EmergencyScreenVC: UIViewController {
         startSOSTracking()
     }
     
-    func animateActionSheet(){
-        UIView.animate(withDuration: 1) {
-            self.userDetails.center.y -= self.userDetails.frame.height
-        }
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         view.addSubview(userDetails)
-        animateActionSheet()
+        //animateActionSheet()
         
     }
-    
-    
     
     func startSOSTracking(){
         
@@ -84,15 +80,31 @@ class EmergencyScreenVC: UIViewController {
         
     }
     
+    func animateActionSheetUpward(){
+        UIView.animate(withDuration: 1) {
+            self.userDetails.center.y -= self.userDetails.frame.height
+        }
+    }
+    
+    func animateActionSheetDownward(){
+        UIView.animate(withDuration: 1) {
+            self.userDetails.center.y += self.userDetails.frame.height
+        }
+    }
+    
     @IBAction func terminate(_ sender: Any) {
         
     }
     
     @IBAction func didTapArrowButton(_ sender: UIButton) {
         if sender.isSelected{
+            bottomConstraintArrowBtn.constant += self.userDetails.frame.height
+            animateActionSheetDownward()
             sender.isSelected = false
         }
         else{
+            bottomConstraintArrowBtn.constant -= self.userDetails.frame.height
+            animateActionSheetUpward()
             sender.isSelected = true
         }
         

@@ -80,12 +80,14 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="SOS Tracker" id="Xm4-Sf-wkV"/>
                     <connections>
+                        <outlet property="bottomArrowBtn" destination="BvE-BY-lMU" id="KJS-we-9cR"/>
+                        <outlet property="bottomConstraintArrowBtn" destination="aks-mv-DU0" id="NiI-MR-3fP"/>
                         <outlet property="mapView" destination="TqK-Ew-EFv" id="WPa-tJ-ASC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eoS-kF-SRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-75" y="780"/>
+            <point key="canvasLocation" x="-75.362318840579718" y="779.46428571428567"/>
         </scene>
         <!--Lost Item Reports-->
         <scene sceneID="ZsA-ch-ceo">

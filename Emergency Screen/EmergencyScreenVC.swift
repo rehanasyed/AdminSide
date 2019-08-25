@@ -66,7 +66,7 @@ class EmergencyScreenVC: AppBaseVC {
         }
         
         LocationHelper.sharedInstance.getCurrentLocation = {[weak self](location) in
-            self!.ref.child("InDanger").child(Session.sharedInstance.userLocationNode!).observe(.value) { (snapshot) in
+            self!.ref.child("InDanger").child(Session.sharedInstance.userLocationNode ?? " ").observe(.value) { (snapshot) in
                 guard let locationDic = snapshot.value as? [String:CLLocationDegrees] else{return}
                 self?.userLocation = CLLocationCoordinate2D(latitude: locationDic["Lat"]!, longitude: locationDic["Long"]!)
                 self!.currentLocation = location.coordinate
@@ -87,7 +87,7 @@ class EmergencyScreenVC: AppBaseVC {
     }
     
     func animateActionSheetUpward(){
-        //if Session.sharedInstance.userLocationNode == nil {return}
+        if Session.sharedInstance.userLocationNode == nil {return}
         UIView.animate(withDuration: 1) {
             self.bottomConstraintArrowBtn.constant += self.userDetails.frame.height
             self.userDetails.center.y -= self.userDetails.frame.height
@@ -97,12 +97,22 @@ class EmergencyScreenVC: AppBaseVC {
     func animateActionSheetDownward(){
         UIView.animate(withDuration: 1) {
             self.bottomConstraintArrowBtn.constant -= self.userDetails.frame.height
-            self.userDetails.center.y += self.userDetails.frame.height
+            self.userDetails.frame = CGRect(x: 0, y: UIScreen.main.bounds.height - self.view.layoutMargins.bottom, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.4)
         }
     }
     
     @IBAction func terminate(_ sender: Any) {
-        Session.sharedInstance.userLocationNode = nil
+        let alert = UIAlertController(title: "Warning", message: "Are you sure you want to terminate the tracking?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { [weak self] (alert) in
+            Session.sharedInstance.userLocationNode = nil
+            Session.sharedInstance.emergencyUser = nil
+            self!.animateActionSheetDownward()
+            self!.mapView.clear()
+            self!.mapView.camera = GMSCameraPosition.camera(withTarget: selectedLocation, zoom: 25)
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
     }
     
     @IBAction func didTapArrowButton(_ sender: UIButton) {

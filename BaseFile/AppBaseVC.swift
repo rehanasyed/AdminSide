@@ -13,8 +13,6 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class AppBaseVC: UIViewController {
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +31,14 @@ class AppBaseVC: UIViewController {
         alert.addAction(okButton)
         self.present(alert, animated: true, completion: nil)
         
+    }
+    
+    func convertDicIntoUser(UserDictionary : [String:Any]) -> EmergencyUser?{
+        guard let name = UserDictionary["Username"] as? String else {return nil}
+        guard let phoneNumber = UserDictionary["PhoneNumber"] as? String else {return nil}
+        guard let gender = UserDictionary["Gender"] as? String else {return nil}
+        
+        return EmergencyUser(Gender: gender == "Male" ? .Male : .Female , Name: name, PhoneNumber: phoneNumber)
     }
 
 }

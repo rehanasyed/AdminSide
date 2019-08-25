@@ -32,5 +32,11 @@ class DatabaseHandler{
        ref.child("Admin").child(uid).updateChildValues(UserData)
     }
     
-        
+    func getUserData(uid:String, completionHandler : (([String:Any]) -> Void)? = nil){
+        ref.child("Users").child(uid).observe(.value) { (snapshot) in
+            if let userDic = snapshot.value as? [String:Any]{
+                completionHandler!(userDic)
+            }
+        }
+    }
 }

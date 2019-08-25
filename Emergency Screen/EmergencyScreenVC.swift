@@ -11,7 +11,7 @@ import GoogleMaps
 import FirebaseDatabase
 import FirebaseAuth
 
-class EmergencyScreenVC: UIViewController {
+class EmergencyScreenVC: AppBaseVC {
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var bottomArrowBtn: UIButton!
     
@@ -41,26 +41,32 @@ class EmergencyScreenVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        if Session.sharedInstance.userLocationNode == nil
-        {
-            return
-        }
         
         startSOSTracking()
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
+        userDetails.frame = CGRect(x: 0, y: UIScreen.main.bounds.height - view.layoutMargins.bottom, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.4)
         view.addSubview(userDetails)
-        //animateActionSheet()
-        
     }
     
     func startSOSTracking(){
         
+        guard let userID = Session.sharedInstance.userLocationNode else
+        {
+            return
+        }
+        
+        DatabaseHandler.sharedInstance.getUserData(uid: userID) { [weak self] (userDic) in
+            if let user = self!.convertDicIntoUser(UserDictionary: userDic){
+                Session.sharedInstance.emergencyUser = user
+                self!.userDetails.bindData()
+            }
+        }
         
         LocationHelper.sharedInstance.getCurrentLocation = {[weak self](location) in
-        self!.ref.child("InDanger").child(Session.sharedInstance.userLocationNode!).observe(.value) { (snapshot) in
+            self!.ref.child("InDanger").child(Session.sharedInstance.userLocationNode!).observe(.value) { (snapshot) in
                 guard let locationDic = snapshot.value as? [String:CLLocationDegrees] else{return}
                 self?.userLocation = CLLocationCoordinate2D(latitude: locationDic["Lat"]!, longitude: locationDic["Long"]!)
                 self!.currentLocation = location.coordinate
@@ -81,29 +87,31 @@ class EmergencyScreenVC: UIViewController {
     }
     
     func animateActionSheetUpward(){
+        //if Session.sharedInstance.userLocationNode == nil {return}
         UIView.animate(withDuration: 1) {
+            self.bottomConstraintArrowBtn.constant += self.userDetails.frame.height
             self.userDetails.center.y -= self.userDetails.frame.height
         }
     }
     
     func animateActionSheetDownward(){
         UIView.animate(withDuration: 1) {
+            self.bottomConstraintArrowBtn.constant -= self.userDetails.frame.height
             self.userDetails.center.y += self.userDetails.frame.height
         }
     }
     
     @IBAction func terminate(_ sender: Any) {
-        
+        Session.sharedInstance.userLocationNode = nil
     }
     
     @IBAction func didTapArrowButton(_ sender: UIButton) {
         if sender.isSelected{
-            bottomConstraintArrowBtn.constant += self.userDetails.frame.height
             animateActionSheetDownward()
             sender.isSelected = false
         }
         else{
-            bottomConstraintArrowBtn.constant -= self.userDetails.frame.height
+            
             animateActionSheetUpward()
             sender.isSelected = true
         }

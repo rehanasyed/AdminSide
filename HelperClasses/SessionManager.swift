@@ -13,6 +13,7 @@ class Session : NSObject{
 
     var userLocation : CLLocationCoordinate2D = CLLocationCoordinate2D()
     var userLocationNode : String? = nil
+    var emergencyUser : EmergencyUser!
     
     private static var _obj : Session? = nil
     

@@ -108,7 +108,7 @@ class EmergencyScreenVC: AppBaseVC {
             Session.sharedInstance.emergencyUser = nil
             self!.animateActionSheetDownward()
             self!.mapView.clear()
-            self!.mapView.camera = GMSCameraPosition.camera(withTarget: selectedLocation, zoom: 25)
+            self!.mapView.camera = GMSCameraPosition.camera(withTarget: self!.selectedLocation, zoom: 25)
         }))
         alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
